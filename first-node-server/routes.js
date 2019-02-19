@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 // REQUEST ROUTE TO HOME PAGE
 if (url === '/') {
   res.write('<html>');
