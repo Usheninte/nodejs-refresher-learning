@@ -1,13 +1,22 @@
 const http = require('http');
 
 const server = http.createServer((req, res) => {
+  // PARSING url AND method
   const url = req.url;
+  const method = req.method;
+
+  // REQUEST ROUTE TO HOME PAGE
   if (url === '/') {
     res.write('<html>');
     res.write('<head><title>Enter Message</title></head>');
     res.write('<body><form action="/message" method="POST"><input type="text" name="message"><button type="submit">Send </button></form></body>');
     res.write('</html>');
     return res.end();
+  };
+
+  // REDIRECT ROUTE TO MESSAGE PAGE
+  if (url === '/message' && method === 'POST') {
+
   }
 
   // process.exit();
