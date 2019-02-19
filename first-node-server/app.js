@@ -17,7 +17,10 @@ const server = http.createServer((req, res) => {
 
   // REDIRECT ROUTE TO MESSAGE PAGE
   if (url === '/message' && method === 'POST') {
-    fs.writeFile('message.txt', 'DUMMY');
+    fs.writeFileSync('message.txt', 'DUMMY');
+    res.statusCode = 302;
+    res.setHeader('Location', '/');
+    return res.end();
   }
 
   // process.exit();
