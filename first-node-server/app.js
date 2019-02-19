@@ -1,11 +1,7 @@
 const http = require('http');
 
-const server = http.createServer((req, res) => {
-  // PARSING url AND method
-  const url = req.url;
-  const method = req.method;
+const routes = require('./routes');
 
-
-});
+const server = http.createServer(routes);
 
 server.listen(3000);

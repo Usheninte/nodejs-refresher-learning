@@ -1,6 +1,10 @@
 const fs = require('fs');
 
 const requestHandler = (req, res) => {
+  // PARSING url AND method
+  const url = req.url;
+  const method = req.method;
+
   // REQUEST ROUTE TO HOME PAGE
   if (url === '/') {
     res.write('<html>');
@@ -37,3 +41,5 @@ const requestHandler = (req, res) => {
   res.write('</html>');
   res.end();
 };
+
+module.exports = requestHandler;
