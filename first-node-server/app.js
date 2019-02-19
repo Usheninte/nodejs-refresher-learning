@@ -1,4 +1,5 @@
 const http = require('http');
+const fs = require('fs');
 
 const server = http.createServer((req, res) => {
   // PARSING url AND method
@@ -16,7 +17,7 @@ const server = http.createServer((req, res) => {
 
   // REDIRECT ROUTE TO MESSAGE PAGE
   if (url === '/message' && method === 'POST') {
-
+    fs.writeFile('message.txt', 'DUMMY');
   }
 
   // process.exit();
