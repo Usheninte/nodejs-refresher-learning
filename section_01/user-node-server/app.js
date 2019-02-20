@@ -7,7 +7,10 @@ const server = http.createServer((req, res) => {
   if (url === '/') {
     res.write('<html>');
     res.write('<head><title>Userpool | Home/title></head>');
+    res.write('<body>');
     res.write('<h1>Hello Userpool</h1>');
+    res.write('<form action="/create-user" method="POST"></form>')
+    res.write('</body>');
     res.write('</html>');
     return res.end();
   };
