@@ -17,6 +17,7 @@ const requestHandler = (req, res) => {
   // REDIRECT ROUTE TO MESSAGE PAGE
   if (url === '/message' && method === 'POST') {
     const body = [];
+    // HERE .on IS AN EVENT LISTENER
     req.on('data', (chunk) => {
       console.log(chunk);
       body.push(chunk);

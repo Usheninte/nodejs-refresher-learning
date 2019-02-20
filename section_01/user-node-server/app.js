@@ -1,8 +1,9 @@
 const http = require('http');
 
 const server = http.createServer((req, res) => {
-  // PARSE url
+  // PARSE url AND mehtod
   const url = req.url;
+  const method = req.method;
 
   if (url === '/') {
     res.write('<html>');
@@ -32,6 +33,20 @@ const server = http.createServer((req, res) => {
     res.write('</body>');
     res.write('</html>');
     return res.end();
+  };
+
+  if (url === '/create-user' && method === 'POST') {
+    const body = [];
+    req.on('data', (chunk) => {
+      console.log(chunk)
+      body.push(chunk);
+    });
+
+    return req.on('end', () => {
+      res.statusCode = 302;
+      res.setHeader('Location', '/');
+      return res.end();
+    });
   };
 });
 
