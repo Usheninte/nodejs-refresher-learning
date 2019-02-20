@@ -9,7 +9,10 @@ const server = http.createServer((req, res) => {
     res.write('<head><title>Userpool | Home/title></head>');
     res.write('<body>');
     res.write('<h1>Hello Userpool</h1>');
-    res.write('<form action="/create-user" method="POST"></form>')
+    res.write('<form action="/create-user" method="POST">');
+    res.write('<input type="text" name="username">');
+    res.write('<button type="submit"></button>');
+    res.write('</form>');
     res.write('</body>');
     res.write('</html>');
     return res.end();
