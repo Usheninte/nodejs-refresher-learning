@@ -11,5 +11,8 @@
     "nodejs"
   ],
   "author": "Usheninte",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
 }
