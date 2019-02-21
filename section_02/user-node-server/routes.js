@@ -12,7 +12,7 @@ const userRequestHandler = (req, res) => {
     res.write('<form action="/create-user" method="POST">');
     res.write('<label>Enter Username:</label>');
     res.write('<input type="text" name="username">');
-    res.write('<button type="submit">Send</button>');
+    res.write('<button type="submit">Send to Server</button>');
     res.write('</form>');
     res.write('</body>');
     res.write('</html>');
