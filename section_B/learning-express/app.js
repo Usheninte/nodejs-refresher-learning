@@ -4,15 +4,13 @@ const bodyParser = require('body-parser');
 const app = express();
 
 const adminRoutes = require('./routes/admin');
+const shopRoutes = require('./routes/shop');
 
 // Parsing MIDDLEWARE
 app.use(bodyParser.urlencoded({extended: false}));
 
 // Route Handling MIDDLEWARE
 app.use(adminRoutes);
-
-app.use('/', (req, res, next) => {
-  res.send('<h1>Hello from Express!</h1>');
-});
+app.use(shopRoutes);
 
 app.listen(3000);
