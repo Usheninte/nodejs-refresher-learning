@@ -10,6 +10,7 @@ const shopRoutes = require('./routes/shop');
 
 // Parsing MIDDLEWARE
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Route Handling MIDDLEWARE
 app.use('/admin', adminRoutes);
