@@ -2,8 +2,8 @@ const express = require('express');
 
 const app = express();
 
-app.get('/', (req, res, next) => {
-  res.send('<h1>Hey World!</h1>');
-});
+const navRoutes = require('./routes/navigation');
+
+app.use(navRoutes);
 
 app.listen(3000);
