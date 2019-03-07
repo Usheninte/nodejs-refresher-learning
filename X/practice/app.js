@@ -1,9 +1,9 @@
 const express = require('express');
 
+const pageRoutes = require('./routes/pageRoutes');
+
 const app = express();
 
-app.get('/', (req, res, next) => {
-  res.send('<h1>! Bang dededeng : )</h1>')
-});
+app.use(pageRoutes);
 
 app.listen(3001);
